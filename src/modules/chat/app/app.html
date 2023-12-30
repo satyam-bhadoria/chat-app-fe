@@ -1,0 +1,34 @@
+<template>
+    <div class="main-container">
+        <ul>
+            <li><a href="javascript:void(0)" style="background-color: #a87e53; text-transform: capitalize;">{loggedInUser.firstName} {loggedInUser.lastName}</a></li>
+            <li><a class="li-user active" href="javascript:void(0)" onclick={selectUserTab}>Users</a></li>
+            <li>
+                <a class="li-chat" href="javascript:void(0)" onclick={selectChatTab}>
+                    Chat {newMsgCounter} msg
+                </a>
+            </li>
+            <li style="float: right;">
+                <template if:true={isLoggedIn}>
+                    <a href="javascript:void(0)" onclick={logout}>Logout</a>
+                </template>
+            </li>
+        </ul>
+        <div class="main-window">
+            <template if:true={isLoggedIn}>
+                <template if:true={showUserList}>
+                    <chat-user-list onstartchat={startChat}></chat-user-list>
+                </template>
+                <template if:true={showChatUser}>
+                    <chat-chat-user onstartchat={startChat}></chat-chat-user>
+                </template>
+                <template if:true={showChatWindow}>
+                    <chat-chat-window recipient-user={recipientUser}></chat-chat-window>
+                </template>
+            </template>
+        </div>
+    </div>
+    <template if:false={isLoggedIn}>
+        <chat-login onloggedin={setLogin}></chat-login>
+    </template>
+</template>

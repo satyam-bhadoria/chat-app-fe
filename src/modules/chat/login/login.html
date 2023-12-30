@@ -1,0 +1,20 @@
+<template>
+<div class="modal" style="display:block">
+
+    <form class="modal-content animate login-form" method="post" onsubmit={login}>
+        <div class="imgcontainer">
+            <img src="/public/assets/recipes-logo.png" alt="Avatar" class="avatar" style="width: 200px;height: auto;">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Email" name="email" value="example@email.com" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" value="12345678" required>
+
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+</template>

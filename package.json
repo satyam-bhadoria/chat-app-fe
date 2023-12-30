@@ -1,0 +1,30 @@
+{
+  "name": "lwr-project",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf node_modules __lwr_cache__ site",
+    "dev": "lwr dev",
+    "dev:compat": "lwr dev --mode compat",
+    "build": "lwr build --clean",
+    "build:prod-compat": "lwr build --clean --mode prod-compat",
+    "start": "lwr start",
+    "stage": "npm run build && npm start",
+    "stage:prod-compat": "npm run build:prod-compat && npm start"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "lwc": "5.0.0",
+    "lwr": "0.11.9",
+    "socket.io-client": "^4.7.2",
+    "uuid": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "volta": {
+    "node": "18.16.1"
+  }
+}

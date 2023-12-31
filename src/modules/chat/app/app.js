@@ -70,7 +70,7 @@ export default class App extends LightningElement {
     try{
       const response = await axios({
         method: 'get',
-        url: `http://localhost:5000/v1/users/me`,
+        url: `${API_HOST}/v1/users/me`,
         headers: {
           Authorization: `Bearer ${Helper.getAccessToken()}`,
           Accept: 'application/json',
@@ -113,7 +113,7 @@ export default class App extends LightningElement {
     try{
       const response = await axios({
         method: 'post',
-        url: `http://localhost:5000/v1/auth/token/generate`,
+        url: `${API_HOST}/v1/auth/token/generate`,
         headers: {
           Authorization: `Bearer ${Helper.getRefreshToken()}`,
           Accept: 'application/json',
@@ -131,7 +131,7 @@ export default class App extends LightningElement {
     try{
       const response = await axios({
         method: 'post',
-        url: `http://localhost:5000/v1/account/signout`,
+        url: `${API_HOST}/v1/account/signout`,
         headers: {
           Authorization: `Bearer ${Helper.getAccessToken()}`,
           Accept: 'application/json',

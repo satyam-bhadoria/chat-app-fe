@@ -88,7 +88,7 @@ export default class ChatWindow extends LightningElement {
     try{
       const response = await axios({
         method: 'get',
-        url: `http://localhost:5000/v1/chats/${roomId}`,
+        url: `${API_HOST}/v1/chats/${roomId}`,
         headers: {
           Authorization: `Bearer ${Helper.getAccessToken()}`,
           Accept: 'application/json',

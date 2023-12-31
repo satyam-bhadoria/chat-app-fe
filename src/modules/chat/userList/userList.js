@@ -15,7 +15,7 @@ export default class UserList extends LightningElement {
     try{
       const response = await axios({
         method: 'get',
-        url: `http://localhost:5000/v1/users/experts`,
+        url: `${API_HOST}/v1/users/experts`,
         headers: {
           Authorization: `Bearer ${Helper.getAccessToken()}`,
           Accept: 'application/json',

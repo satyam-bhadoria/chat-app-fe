@@ -12,7 +12,7 @@ export default class Login extends LightningElement {
     try{
       const response = await axios({
         method: 'post',
-        url: `http://localhost:5000/v1/account/login/email`,
+        url: `${API_HOST}/v1/account/login/email`,
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',

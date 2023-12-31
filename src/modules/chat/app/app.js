@@ -14,6 +14,7 @@ export default class App extends LightningElement {
   counter = 0;
 
   connectedCallback() {
+    console.log('connected hosts--->', Helper.apiHost, Helper.webSocketHost);
     SocketIO.init();
     SocketIO.setAppInstance(this);
     this.counter = 0;
@@ -70,7 +71,7 @@ export default class App extends LightningElement {
     try{
       const response = await axios({
         method: 'get',
-        url: `${API_HOST}/v1/users/me`,
+        url: `${Helper.apiHost}/v1/users/me`,
         headers: {
           Authorization: `Bearer ${Helper.getAccessToken()}`,
           Accept: 'application/json',
@@ -113,7 +114,7 @@ export default class App extends LightningElement {
     try{
       const response = await axios({
         method: 'post',
-        url: `${API_HOST}/v1/auth/token/generate`,
+        url: `${Helper.apiHost}/v1/auth/token/generate`,
         headers: {
           Authorization: `Bearer ${Helper.getRefreshToken()}`,
           Accept: 'application/json',
@@ -131,7 +132,7 @@ export default class App extends LightningElement {
     try{
       const response = await axios({
         method: 'post',
-        url: `${API_HOST}/v1/account/signout`,
+        url: `${Helper.apiHost}/v1/account/signout`,
         headers: {
           Authorization: `Bearer ${Helper.getAccessToken()}`,
           Accept: 'application/json',

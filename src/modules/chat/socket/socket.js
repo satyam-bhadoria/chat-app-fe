@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import { v4 as uuidV4 } from "uuid";
 import Helper from "chat/helper";
 
-const socket = io("ws://localhost:5005", {
+const socket = io(Helper.webSocketHost, {
   autoConnect: false,
   transports: ["websocket"]
 });

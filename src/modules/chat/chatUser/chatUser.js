@@ -15,7 +15,7 @@ export default class ChatUser extends LightningElement {
     try{
       const response = await axios({
         method: 'get',
-        url: `${API_HOST}/v1/chats/users`,
+        url: `${Helper.apiHost}/v1/chats/users`,
         headers: {
           Authorization: `Bearer ${Helper.getAccessToken()}`,
           Accept: 'application/json',

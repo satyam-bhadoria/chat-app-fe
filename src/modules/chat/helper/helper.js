@@ -1,4 +1,7 @@
 export default class Helper {
+  static webSocketHost = 'wss://api-dev.merabuddy.online';
+  static apiHost = 'https://api-dev.merabuddy.online';
+
   static isUserLoggedIn() {
     if (this.getAccessToken()) {
       return true;
